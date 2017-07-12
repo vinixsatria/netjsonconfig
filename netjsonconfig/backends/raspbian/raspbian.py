@@ -26,13 +26,13 @@ class Raspbian(BaseBackend):
         Ntp
     ]
 
-
     def render(self, files=True):
         self.validate()
         if self.intermediate_data is None:
             self.to_intermediate()
-        for renderers in self.renderers:
-            renderer = renderers
-            output = renderer.render(self)
+        output = ''
+        for renderer_class in self.renderers:
+            renderer = renderer_class(self)
+            output += renderer.render()
             del renderer
         return output
