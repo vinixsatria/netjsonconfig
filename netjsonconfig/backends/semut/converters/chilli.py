@@ -13,7 +13,7 @@ class Chilli(OpenWrtConverter):
         return result
 
     def __intermediate_chilli(self, chilli):
-        if 'chilli' not in chilli:
+        if not chilli:
             return
 
         chilli.update({
