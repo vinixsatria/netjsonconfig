@@ -3,9 +3,9 @@ Koloni specific JSON-Schema definition
 """
 schema = {
     "properties": {
-        "general": {
-            "required": ["hostname"]
-        },
+        #"general": {
+        #    "required": ["hostname"]
+        #},
         "chilli": {
             "type": "object",
             "title": "Hotspot Settings",
@@ -13,7 +13,7 @@ schema = {
             "required": [
                 "domain",
                 "tundev", "dhcpif", "net",
-                "uamlisten", "uamsecret",
+                "uamlisten",
                 "uamserver", "uamhompage",
                 "uamsecret", "uamallowed",
                 "radiusserver1", "radiusserver2", "radiussecret",

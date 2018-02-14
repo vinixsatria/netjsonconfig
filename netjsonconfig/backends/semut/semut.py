@@ -1,4 +1,4 @@
-from . import converters
+from .converters.chilli import Chilli
 from ..openwrt.openwrt import OpenWrt
 from .schema import schema
 
@@ -12,4 +12,4 @@ class Semut(OpenWrt):
         super(Semut, self).__init__(config, native, templates, context);
 
         # Tambahkan converter Chilli
-        self.converters.append(converters.Chilli)
+        self.converters.append(Chilli)

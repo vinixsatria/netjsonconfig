@@ -1,4 +1,4 @@
-from .base import OpenWrtConverter
+from ...openwrt.converters.base import OpenWrtConverter
 
 class Chilli(OpenWrtConverter):
     netjson_key = 'chilli'
@@ -52,7 +52,7 @@ class Chilli(OpenWrtConverter):
 
     def __netjson_chilli(self, chilli):
         del chilli['.type']
-        _name = system.pop('.name')
+        _name = chilli.pop('.name')
         if _name or _name != 'chilli':
             chilli['name'] = _name
         return chilli
