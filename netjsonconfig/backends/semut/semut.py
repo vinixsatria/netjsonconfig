@@ -1,6 +1,6 @@
 from . import converters
 from ..openwrt.openwrt import OpenWrt
-from .schema import schemaß
+from .schema import schema
 
 class Semut(OpenWrt):
     """
