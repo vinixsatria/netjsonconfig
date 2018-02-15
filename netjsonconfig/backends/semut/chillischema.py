@@ -1,3 +1,5 @@
+from ...countries import countries
+
 """
 Koloni specific JSON-Schema definition
 """
@@ -179,6 +181,49 @@ schema = {
                     "maxLength": 255,
                     "default": "isocc=ID,cc=62,ac=031,network=KoloniSemut",
                     "propertyOrder": 20,
+                },
+                "location": {
+                    "type": "object",
+                    "title": "Location Attributes",
+                    "propertyOrder": 20,
+                    "items": {
+                        "properties": {
+                            "locname": {
+                                "type": "string",
+                                "title": "NAS Name",
+                                "minLength": 2,
+                                "maxLength": 64,
+                                "default": "",
+                                "propertyOrder": 19,
+                            },
+                            "locisocc": {
+                                "type": "string",
+                                "title": "Country",
+                                "maxLength": 2,
+                                "default": "62",
+                                "enum": list(countries.values()),
+                                "options": {"enum_titles": list(countries.keys())},
+                                "propertyOrder": 7,
+                            },
+                            "loccc": {
+                                "type": "string",
+                                "title": "Phone Prefix",
+                                "minLength": 2,
+                                "maxLength": 4,
+                                "default": "62",
+                                "propertyOrder": 19,
+                            },
+                            "locac": {
+                                "type": "string",
+                                "title": "Phone Area Code",
+                                "minLength": 2,
+                                "maxLength": 6,
+                                "default": "031",
+                                "propertyOrder": 19,
+                            },
+                            
+                        }
+                    }
                 },
                 
 

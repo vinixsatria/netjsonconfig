@@ -43,8 +43,24 @@ class Chilli(OpenWrtConverter):
             chilli['nasip'] = chilli['uamlisten']
         if 'uamaliasname' not in chilli:
             chilli['uamaliasname'] = chilli['radiusnasid']
-        if 'radiuslocationname' not in chilli:
+        if 'location' in chilli:
+            loc = chilli['location']
+            if 'locname' in loc and loc['locname']:
+                chilli['locationname'] = loc['locname']
+                chilli['radiuslocationname'] = loc['locname'].replace('.', '_')
+
+            location = ''
+            if 'locisocc' in loc and loc['locisocc']:
+                location = 'isocc=' + loc['locisocc']
+            if 'loccc' in loc and loc['loccc']:
+                location += 'cc=' + loc['loccc']
+            if 'locac' in loc and loc['locac']:
+                location += 'ac=' + loc['locac']
+            if location:
+                chilli['radiuslocationid'] = location
+        elif chilli['locationname'] and 'radiuslocationname' not in chilli:
             chilli['radiuslocationname'] = chilli['locationname'].replace('.', '_')
+        
         if chilli['radiuslocationid']:
             chilli['radiuslocationid'] += ',' + chilli['radiuslocationname']
         
