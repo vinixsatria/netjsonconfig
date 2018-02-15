@@ -19,6 +19,7 @@ schema = {
                 "uamsecret", "uamallowed",
                 "radiusserver1", "radiusserver2", 
                 "radiussecret", "radiusnasid",
+                "location",
             ],
             "properties": {
                 "disabled": {
