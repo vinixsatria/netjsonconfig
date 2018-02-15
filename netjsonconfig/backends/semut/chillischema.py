@@ -185,7 +185,7 @@ schema = {
                 "location": {
                     "type": "object",
                     "title": "Location Attributes",
-                    "propertyOrder": 20,
+                    "propertyOrder": 21,
                     "required": [
                         "locname", "locisocc",
                         "loccc", "locac"
@@ -197,7 +197,7 @@ schema = {
                             "minLength": 2,
                             "maxLength": 64,
                             "default": "",
-                            "propertyOrder": 19,
+                            "propertyOrder": 1,
                         },
                         "locisocc": {
                             "type": "string",
@@ -206,7 +206,7 @@ schema = {
                             "default": "62",
                             "enum": list(countries.values()),
                             "options": {"enum_titles": list(countries.keys())},
-                            "propertyOrder": 7,
+                            "propertyOrder": 2,
                         },
                         "loccc": {
                             "type": "string",
@@ -214,7 +214,7 @@ schema = {
                             "minLength": 2,
                             "maxLength": 4,
                             "default": "62",
-                            "propertyOrder": 19,
+                            "propertyOrder": 3,
                         },
                         "locac": {
                             "type": "string",
@@ -222,10 +222,17 @@ schema = {
                             "minLength": 2,
                             "maxLength": 6,
                             "default": "031",
-                            "propertyOrder": 19,
+                            "propertyOrder": 4,
                         },
-                        
-                    }
+                        "locrealm": {
+                            "type": "string",
+                            "title": "Realm",
+                            "minLength": 5,
+                            "maxLength": 64,
+                            "default": "KoloniSemut",
+                            "propertyOrder": 5,
+                        },
+                    },
                 },
                 
 
