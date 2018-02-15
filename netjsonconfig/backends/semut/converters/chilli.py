@@ -48,7 +48,8 @@ class Chilli(OpenWrtConverter):
         if chilli['radiuslocationid']:
             chilli['radiuslocationid'] += ',' + chilli['radiuslocationname']
         
-        return [self.sorted_dict(chilli)]
+        #return [self.sorted_dict(chilli)]
+        return chilli
 
     def to_netjson_loop(self, block, result, index):
         result['chilli'] = self.__netjson_chilli(block)
