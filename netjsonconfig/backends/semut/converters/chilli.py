@@ -39,7 +39,7 @@ class Chilli(OpenWrtConverter):
             chilli['uamanydns'] = True
         if 'domain' not in chilli or not chilli['domain']:
             chilli['domain'] = 'kolonisemut.com'
-        if 'nasip' not in chilli:
+        if 'nasip' not in chilli or not chilli['nasip']:
             chilli['nasip'] = chilli['uamlisten']
         if 'uamaliasname' not in chilli:
             chilli['uamaliasname'] = chilli['radiusnasid']
