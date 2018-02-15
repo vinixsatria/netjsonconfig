@@ -13,11 +13,10 @@ schema = {
             "required": [
                 "domain",
                 "tundev", "dhcpif", "net",
-                "uamlisten",
-                "uamserver", "uamhompage",
+                "uamlisten", "uamserver", "uamhompage",
                 "uamsecret", "uamallowed",
                 "radiusserver1", "radiusserver2", "radiussecret",
-                "radiusnasid", "locationname", "radiuslocationid",
+                "radiusnasid", "locationname",
                 
             ],
             "properties": {
@@ -26,7 +25,7 @@ schema = {
                     "title": "Disable Hotspot",
                     "default": False,
                     "format": "checkbox",
-                    "propertyOrder": 1,
+                    "propertyOrder": 0,
                 },
                 "domain": {
                     "type": "string",
@@ -35,7 +34,7 @@ schema = {
                     "minLength": 3,
                     "maxLength": 64,
                     "default": "kolonisemut.com",
-                    "propertyOrder": 2,
+                    "propertyOrder": 1,
                 },
                 "tundev": {
                     "type": "string",
@@ -43,7 +42,7 @@ schema = {
                     "minLength": 3,
                     "maxLength": 10,
                     "default": "tun0",
-                    "propertyOrder": 3,
+                    "propertyOrder": 2,
                 },
                 "dhcpif": {
                     "type": "string",
@@ -51,15 +50,15 @@ schema = {
                     "minLength": 3,
                     "maxLength": 10,
                     "default": "wlan0",
-                    "propertyOrder": 4,
+                    "propertyOrder": 3,
                 },
                 "net": {
                     "type": "string",
-                    "title": "Network Interface",
-                    "minLength": 10,
+                    "title": "Netmask",
+                    "minLength": 7,
                     "maxLength": 31,
                     "default": "",
-                    "propertyOrder": 5,
+                    "propertyOrder": 4,
                 },
                 "uamlisten": {
                     "type": "string",
@@ -67,7 +66,7 @@ schema = {
                     "minLength": 7,
                     "maxLength": 31,
                     "default": "",
-                    "propertyOrder": 6,
+                    "propertyOrder": 5,
                 },
                 "uamport": {
                     "type": "integer",
@@ -75,6 +74,7 @@ schema = {
                     "minimum": 1,
                     "maximum": 9999,
                     "default": 3990,
+                    "propertyOrder": 6,
                 },
                 "coaport": {
                     "type": "integer",
@@ -82,6 +82,7 @@ schema = {
                     "minimum": 1,
                     "maximum": 9999,
                     "default": 3799,
+                    "propertyOrder": 7,
                 },
                 "uamhompage": {
                     "type": "string",
@@ -89,7 +90,7 @@ schema = {
                     "minLength": 10,
                     "maxLength": 255,
                     "default": "http://www.kolonisemut.com/splash",
-                    "propertyOrder": 7,
+                    "propertyOrder": 8,
                 },
                 "uamserver": {
                     "type": "string",
@@ -97,7 +98,7 @@ schema = {
                     "minLength": 10,
                     "maxLength": 255,
                     "default": "http://www.kolonisemut.com",
-                    "propertyOrder": 8,
+                    "propertyOrder": 9,
                 },
                 "uamsecret": {
                     "type": "string",
@@ -105,7 +106,7 @@ schema = {
                     "minLength": 10,
                     "maxLength": 64,
                     "default": "",
-                    "propertyOrder": 9,
+                    "propertyOrder": 10,
                 },
                 "uamallowed": {
                     "type": "string",
@@ -113,7 +114,7 @@ schema = {
                     "minLength": 10,
                     "maxLength": 1024,
                     "default": "www.kolonisemut.com,kolonisemut.com,bit.kolonisemut.com",
-                    "propertyOrder": 10,
+                    "propertyOrder": 11,
                 },
                 "radiusserver1": {
                     "type": "string",
@@ -121,7 +122,7 @@ schema = {
                     "minLength": 7,
                     "maxLength": 64,
                     "default": "voucher.kolonisemut.com",
-                    "propertyOrder": 11,
+                    "propertyOrder": 12,
                 },
                 "radiusserver2": {
                     "type": "string",
@@ -129,7 +130,7 @@ schema = {
                     "minLength": 7,
                     "maxLength": 64,
                     "default": "5.170.0.2",
-                    "propertyOrder": 12,
+                    "propertyOrder": 13,
                 },
                 "radiusauthport": {
                     "type": "integer",
@@ -137,6 +138,7 @@ schema = {
                     "minimum": 1,
                     "maximum": 9999,
                     "default": 1812,
+                    "propertyOrder": 14,
                 },
                 "radiusacctport": {
                     "type": "integer",
@@ -144,6 +146,7 @@ schema = {
                     "minimum": 1,
                     "maximum": 9999,
                     "default": 1813,
+                    "propertyOrder": 15,
                 },
                 "radiussecret": {
                     "type": "string",
@@ -151,7 +154,7 @@ schema = {
                     "minLength": 10,
                     "maxLength": 64,
                     "default": "",
-                    "propertyOrder": 13,
+                    "propertyOrder": 16,
                 },
                 "radiusnasid": {
                     "type": "string",
@@ -159,7 +162,7 @@ schema = {
                     "minLength": 7,
                     "maxLength": 64,
                     "default": "",
-                    "propertyOrder": 14,
+                    "propertyOrder": 17,
                 },
                 "locationname": {
                     "type": "string",
@@ -167,7 +170,7 @@ schema = {
                     "minLength": 7,
                     "maxLength": 64,
                     "default": "",
-                    "propertyOrder": 15,
+                    "propertyOrder": 19,
                 },
                 "radiuslocationid": {
                     "type": "string",
@@ -175,7 +178,7 @@ schema = {
                     "minLength": 7,
                     "maxLength": 255,
                     "default": "isocc=ID,cc=62,ac=031,network=KoloniSemut",
-                    "propertyOrder": 16,
+                    "propertyOrder": 20,
                 },
                 
 
@@ -184,6 +187,7 @@ schema = {
                     "title": "Allow any DNS",
                     "default": True,
                     "format": "checkbox",
+                    "propertyOrder": 21,
                 },
                 "dns1": {
                     "type": "string",
@@ -191,6 +195,7 @@ schema = {
                     "minLength": 7,
                     "maxLength": 15,
                     "default": "8.8.8.8",
+                    "propertyOrder": 22,
                 },
                 "dns2": {
                     "type": "string",
@@ -198,13 +203,15 @@ schema = {
                     "minLength": 7,
                     "maxLength": 15,
                     "default": "8.8.4.4",
+                    "propertyOrder": 23,
                 },
                 "nasip": {
                     "type": "string",
                     "title": "Radius NAS-IP-Address Attribute",
-                    "minLength": 7,
+                    "minLength": 0,
                     "maxLength": 15,
                     "default": "",
+                    "propertyOrder": 24,
                 },
 
                 # OPSIONAL
@@ -214,6 +221,7 @@ schema = {
                     "minLength": 3,
                     "maxLength": 10,
                     "default": "lan",
+                    "propertyOrder": 25,
                 },
                 "interval": {
                     "type": "integer",
@@ -221,6 +229,7 @@ schema = {
                     "minimum": 120,
                     "maximum": 86400,
                     "default": 3600,
+                    "propertyOrder": 26,
                 },
                 "statedir": {
                     "type": "string",
@@ -228,6 +237,7 @@ schema = {
                     "minLength": 1,
                     "maxLength": 100,
                     "default": "./",
+                    "propertyOrder": 27,
                 },
                 
                 "fg": {
@@ -235,6 +245,7 @@ schema = {
                     "title": "Foreground Process",
                     "default": False,
                     "format": "checkbox",
+                    "propertyOrder": 28,
                 },
                 "debug": {
                     "type": "integer",
@@ -242,6 +253,7 @@ schema = {
                     "minimum": 1,
                     "maximum": 9,
                     "default": 9,
+                    "propertyOrder": 29,
                 },
             }        
         }

@@ -23,6 +23,8 @@ class Chilli(OpenWrtConverter):
 
         chilli['acctupdate'] = True
         chilli['macauth'] = True
+        if not chilli['fg']:
+            del chilli[fg]
         if 'uamport' not in chilli:
             chilli['uamport'] = 3990
         if 'coaport' not in chilli:
@@ -31,7 +33,7 @@ class Chilli(OpenWrtConverter):
             chilli['radiusauthport'] = 1812
         if 'radiusacctport' not in chilli:
             chilli['radiusacctport'] = 1813
-        if 'uamanydns' not in chilli:
+        if 'uamanydns' not in chilli or not chilli['uamanydns']:
             chilli['uamanydns'] = True
         if 'domain' not in chilli or not chilli['domain']:
             chilli['domain'] = 'kolonisemut.com'
