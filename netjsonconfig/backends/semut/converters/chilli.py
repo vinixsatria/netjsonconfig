@@ -23,8 +23,10 @@ class Chilli(OpenWrtConverter):
 
         chilli['acctupdate'] = True
         chilli['macauth'] = True
-        if chilli['fg'] and not chilli['fg']:
-            del chilli[fg]
+        if 'disabled' in chilli and not chilli['disabled']:
+            del chilli['disabled']
+        if 'fg' in chilli and not chilli['fg']:
+            del chilli['fg']
         if 'uamport' not in chilli:
             chilli['uamport'] = 3990
         if 'coaport' not in chilli:
