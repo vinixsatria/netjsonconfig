@@ -17,9 +17,8 @@ schema = {
                 "tundev", "dhcpif", "net",
                 "uamlisten", "uamserver", "uamhompage",
                 "uamsecret", "uamallowed",
-                "radiusserver1", "radiusserver2", "radiussecret",
-                "radiusnasid", "locationname",
-                
+                "radiusserver1", "radiusserver2", 
+                "radiussecret", "radiusnasid",
             ],
             "properties": {
                 "disabled": {
