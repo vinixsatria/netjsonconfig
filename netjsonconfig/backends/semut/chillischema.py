@@ -5,9 +5,6 @@ Koloni specific JSON-Schema definition
 """
 schema = {
     "properties": {
-        #"general": {
-        #    "required": ["hostname"]
-        #},
         "chilli": {
             "type": "object",
             "title": "Hotspot Settings",
@@ -167,22 +164,6 @@ schema = {
                     "propertyOrder": 17,
                 },
 
-                #"locationname": {
-                #    "type": "string",
-                #    "title": "NAS Location Name",
-                #    "minLength": 7,
-                #    "maxLength": 64,
-                #    "default": "",
-                #    "propertyOrder": 19,
-                #},
-                #"radiuslocationid": {
-                #    "type": "string",
-                #    "title": "NAS Location ID",
-                #    "minLength": 7,
-                #    "maxLength": 255,
-                #    "default": "isocc=ID,cc=62,ac=031,network=KoloniSemut",
-                #    "propertyOrder": 20,
-                #},
                 "location": {
                     "type": "object",
                     "title": "Location Attributes",
